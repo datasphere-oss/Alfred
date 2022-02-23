@@ -8,3 +8,5 @@ Alfred is the high performance realtime rule computing engine focus on the Finan
 ### Large Scale Out
 
 Alfred can scale out to 256 nodes in one distributed cluster.  
+
+[Demo](https://github.com/datasphere-oss/Alfred/blob/main/DEMO/ALFRED-DEMO.mp4)
