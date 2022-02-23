@@ -7,12 +7,32 @@ Alfred 为云原生实时规则计算引擎，Alfred以事件驱动和高性能�
 
 Alfred Server 为 Alfred实时和规则计算的核心部分. 架构图展示了Alfred其主要组件部分:
 
-[components](https://github.com/datasphere-oss/Alfred/blob/main/picture/Pub-Sub.png)
-
+Alfred Instance 感知到持续地数据流入.
 Message Bus 提供了客户端-服务端的网络通信, 可使用协议为 TCP, IPC, UDP, 或 HTTP 网路协议. 客户端API可使用多种语言进行集成对接.
+Publisher (Loader) 将数据写入到数据流. 每个 Loader 仅将数据写入到一个特定的数据流中. 多个 Loader 可同时将数据写入到一个数据流中. 
+Subscriber (Cursor) 能够从一个或多个数据流中读取数据, 可根据需求临时添加实时过滤条件.
 
-Alfred Instance 感知到持续地数据流入. Publisher (Loader) 将数据写入到数据流. 每个 Loader 仅将数据写入到一个特定的数据流中. 多个 Loader 可同时将数据写入到一个数据流中. Subscriber (Cursor) 能够从一个或多个数据流中读取数据, 可根据需求临时添加实时过滤条件.
 
+Alfred 将数据以裸数据文件的形式存储在持久化存储中. 持久化层提供数据缓存/查询/存储等功能. LRU 缓存用于快速访问活跃数据.Alfred 也可用于作为消息中继. 在这种情况下, 流式数据缓存在内存缓冲中, 然后转发它. 此功能用于瞬时数据和持久数据流.
+
+
+DB Engine 是一个逻辑组件:
+
+- 时序处理器 - 处理裸数据文件.
+- 实时双工 - 提供双工和顺序数据. 通过时间戳排列不同的逻辑数据源.
+- SQL处理器 - 逻辑模块负责SQL查询、中断、读取、过滤处理.
+
+Alfred 可以连接到各种不同的数据来源和数据消费端.
+
+数据聚合 - 从实时数据订阅中聚合时序数据, 转换源端数据到Alfred 数据格式并写入到实时数据流中.
+数据聚合工具 - 作为时序数据聚合和分析工具.
+ETL工具 - 对源端数据实时清洗加工数据并将数据写入到外部数据流.
+Grafana 补丁 - 在Grafana仪表盘中实时查看Alfred数据流.
+Alfred 管理 - Alfred 管理应用.
+Alfred 同步 - 数据转换到消费者格式.
+Web 网关 - 以JSON格式接收输入输出数据作为 REST/WS 客户端.
+Kafka 连接器 - 将数据实时聚合后发送到 Apache Kafka 消息队列中.
+Loaders/Cursors - 多种语言API类型写入数据到 Alfred 数据流中.
 
 
 
