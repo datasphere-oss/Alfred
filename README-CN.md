@@ -7,6 +7,7 @@ Alfred 为云原生实时规则计算引擎，Alfred以事件驱动和高性能�
 
 Alfred Server 为 Alfred实时和规则计算的核心部分. 架构图展示了Alfred其主要组件部分:
 
+[components](https://github.com/datasphere-oss/Alfred/blob/main/picture/Pub-Sub.png)
 
 Message Bus 提供了客户端-服务端的网络通信, 可使用协议为 TCP, IPC, UDP, 或 HTTP 网路协议. 客户端API可使用多种语言进行集成对接.
 
