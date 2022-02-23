@@ -8,6 +8,12 @@ Alfred 为云原生实时规则计算引擎，Alfred以事件驱动和高性能�
 Alfred Server 为 Alfred实时和规则计算的核心部分. 架构图展示了Alfred其主要组件部分:
 
 
+Message Bus 提供了客户端-服务端的网络通信, 可使用协议为 TCP, IPC, UDP, 或 HTTP 网路协议. 客户端API可使用多种语言进行集成对接.
+
+Alfred Instance 感知到持续地数据流入. Publisher (Loader) 将数据写入到数据流. 每个 Loader 仅将数据写入到一个特定的数据流中. 多个 Loader 可同时将数据写入到一个数据流中. Subscriber (Cursor) 能够从一个或多个数据流中读取数据, 可根据需求临时添加实时过滤条件.
+
+
+
 
 
 
