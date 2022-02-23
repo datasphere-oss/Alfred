@@ -5,5 +5,5 @@ Alfred is the fastest high performance sql streaming analytics in the Financial 
 2 millions data points incoming per node.
 
 
-### Distributed Scale Out
+### Large Scale Out
 
