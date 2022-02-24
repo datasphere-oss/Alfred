@@ -40,6 +40,16 @@ Timestamp, symbol 和 class 能够通过 "keys"来感知, 服务于消息检索.
 
 Cursor（Subscriber）可以消费整个数据流。在这种情况下，Cursor会按照Loader（Publisher）写入的时间顺序接收相关消息。所有Symbol的消息都根据它们的时间戳以一个时间序列聚合。这张图片展示了一个流时间线，其中所有消息都按时间顺序排列。
 
+[Timeline1](https://github.com/datasphere-oss/Alfred/blob/main/picture/Timeline1.png)
+
+### 订阅过滤
+
+Cursor（Subscriber）可以根据订阅消息的时间戳过滤订阅消息。原始的时间顺序被保留。图片说明了从时间戳 T6 开始订阅所有消息流。
+
+[Timeline2](https://github.com/datasphere-oss/Alfred/blob/main/picture/Timeline2.png)
+
+
+
 
 
 
