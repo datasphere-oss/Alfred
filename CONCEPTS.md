@@ -26,6 +26,8 @@ Alfred 数据流可能包含多个类的消息。在这种情况下，特定的�
 
 Publisher (loader) 写入数据到数据流中. Loader 按时间顺序将消息添加到数据流中. 一些 loader 写入相同的数据流; 而每个Loader仅写入一个数据流中.
 
+[Loader](https://github.com/datasphere-oss/Alfred/blob/main/picture/Loader.png)
+
 
 
 
