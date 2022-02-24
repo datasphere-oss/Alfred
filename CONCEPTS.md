@@ -34,6 +34,11 @@ Subscriber(Cursor)从数据流中读取数据. 单个数据流可能有多个从
 
 [Cursor](https://github.com/datasphere-oss/Alfred/blob/main/picture/Cursor.png)
 
+Timestamp, symbol 和 class 能够通过 "keys"来感知, 服务于消息检索. 游标使用键来订阅特定的数据子集。Cursor消耗的数据是原始流的消息时间线的转换，其中消息使用任何或所有“Keys”进行过滤，并且始终按时间顺序排列（T2>T1.. etc.）
+
+### 订阅数据
+
+Cursor（Subscriber）可以消费整个数据流。在这种情况下，Cursor会按照Loader（Publisher）写入的时间顺序接收相关消息。所有Symbol的消息都根据它们的时间戳以一个时间序列聚合。这张图片展示了一个流时间线，其中所有消息都按时间顺序排列。
 
 
 
