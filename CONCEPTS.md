@@ -28,6 +28,11 @@ Publisher (loader) 写入数据到数据流中. Loader 按时间顺序将消息�
 
 [Loader](https://github.com/datasphere-oss/Alfred/blob/main/picture/Loader.png)
 
+### 消费数据
+
+Subscriber(Cursor)从数据流中读取数据. 单个数据流可能有多个从中读取数据的Cursor，每个Cursor可以从一个或多个数据流中读取数据。Cursor使用与Loader写入的时间顺序完全相同的消息。
+
+[Cursor](https://github.com/datasphere-oss/Alfred/blob/main/picture/Cursor.png)
 
 
 
