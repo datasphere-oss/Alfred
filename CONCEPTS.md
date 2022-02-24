@@ -12,3 +12,4 @@ Alfred 使用消息存储时序事件数据, 同时 并且每种类型的事件�
 
 在下图中，金融市场数据以交易和最佳买入/卖出 (BBO) 消息的形式表示。每个消息类都有一组单独的字段和从父类继承的两个属性：符号（交易工具标识符）和特定的时间戳。
 
+[Message Inhibition](https://github.com/datasphere-oss/Alfred/blob/main/picture/Msg-Inhibition.png)
