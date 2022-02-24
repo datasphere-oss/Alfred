@@ -50,6 +50,9 @@ Cursor（Subscriber）可以根据订阅消息的时间戳过滤订阅消息。�
 
 Cursor（Subscriber）可以根据它们的时间戳和类过滤订阅消息。原始的时间顺序被保留。图片说明了从时间戳 T6 开始订阅 Trade 类的所有消息流。
 
+[Timeline3](https://github.com/datasphere-oss/Alfred/blob/main/picture/Timeline3.png)
 
+Cursor（Subscriber）可以根据时间戳和Symbol过滤订阅消息。原始的时间顺序被保留。图片说明了从时间戳 T7 开始订阅所有 AMZN 消息流。
 
+[Timeline4](https://github.com/datasphere-oss/Alfred/blob/main/picture/Timeline4.png)
 
