@@ -4,7 +4,7 @@
 
 持久化数据流将数据写到磁盘上。
 
-
+[Persist-Disk](https://github.com/datasphere-oss/Alfred/blob/main/picture/Persist-Disk.png)
 
 持久消息存储在预定义大小的时间分片文件(TSF)中。这种数据存储模型的特点之一是最新的TSF文件中的数据都缓存在内存中。然后，最新的TSF文件定期将数据刷新到磁盘上。
 
