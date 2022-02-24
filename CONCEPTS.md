@@ -13,3 +13,16 @@ Alfred 使用消息存储时序事件数据, 同时 并且每种类型的事件�
 在下图中，金融市场数据以交易和最佳买入/卖出 (BBO) 消息的形式表示。每个消息类都有一组单独的字段和从父类继承的两个属性：符号（交易工具标识符）和特定的时间戳。
 
 [Message Inhibition](https://github.com/datasphere-oss/Alfred/blob/main/picture/Msg-Inhibition.png)
+
+### 数据流处理
+
+消息按每个符号的时间戳顺序存储在数据流中。在下面的流图中，我们看到了按 Symbol(AAPL、AMZN 等)聚合的不同类别的消息(Best Bid/Offer (BBO) 和 Trade）。所有消息都根据它们的时间戳(T1、T2 等)按时间顺序排列在数据流中。 Alfred 提供纳秒颗粒度的时间戳。
+
+[Stream Timeline](https://github.com/datasphere-oss/Alfred/blob/main/picture/Stream-Timeline.png)
+
+Alfred 数据流可能包含多个类的消息。在这种情况下，特定的流模式决定了可以将哪些消息类记录到每个流中。
+
+
+
+
+
