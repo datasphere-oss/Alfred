@@ -14,4 +14,7 @@
 
 Alfred 数据流的瞬态类型用于消息中继。瞬态消息存储在服务器的循环内存缓冲区中。当所有Reader(Cursor)读取瞬态流中的数据时，它会被丢弃。
 
+[Memory-Buffer](https://github.com/datasphere-oss/Alfred/blob/main/picture/Memory-Buffer.png)
+
+
 
