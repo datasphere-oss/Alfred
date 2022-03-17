@@ -1,0 +1,51 @@
+/*******************************************************************************
+ *
+ *
+ *  Copyright (c) 2022 Alfred
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ *
+ ******************************************************************************/
+
+package org.apache.alfred.engine.config;
+
+import org.apache.alfred.snmp.QuantServerSnmpObjectContainer;
+import org.apache.catalina.Context;
+
+import java.io.Closeable;
+
+public interface ServiceExecutor extends Closeable {
+
+    /**
+     * Service entry point
+     * 
+     * @param configs QuantService Configurations
+     */
+    void run(QuantServiceConfig... configs);
+
+    /**
+     * Web module configuration hook
+     * 
+     * @param context
+     */
+    void configure(Context context);
+
+    /**
+     * Implementors for this method may put own SNMP data objects into provided
+     * {@code snmpContextHolder}.
+     * 
+     * @param snmpContextHolder container for SNMP data objects
+     */
+    default void registerSnmpObjects(QuantServerSnmpObjectContainer snmpContextHolder) {
+    }
+}
