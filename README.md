@@ -1,5 +1,5 @@
 # Alfred
-Alfred is the high performance realtime rule computing engine focus on the Financial world.
+Alfred is the high performance realtime traffic computing engine focus on the V2X world.
 
 ## Architecture
 
